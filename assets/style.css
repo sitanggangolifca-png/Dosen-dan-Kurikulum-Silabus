@@ -1,0 +1,484 @@
+/* TPPU Content plugin — styling frontend (navy + oranye, konsisten dengan identitas Prodi TPPU) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --tppu-navy: #0B2545;
+  --tppu-navy-deep: #071b33;
+  --tppu-amber: #B5730A;
+  --tppu-amber-light: #d99a1f;
+  --tppu-panel: #F7F8F9;
+  --tppu-line: #D5D9DE;
+  --tppu-muted: #5A6472;
+  --tppu-steel: #b7c6e6;
+  --tppu-font-head: "Space Grotesk", "Segoe UI", sans-serif;
+  --tppu-font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+/* ===== Halaman konten tempel (Beranda / Tentang Kami / Kontak) ===== */
+.tppu-page { font-family: var(--tppu-font-body); color: #10182b; }
+.tppu-page h1, .tppu-page h2, .tppu-page h3, .tppu-page h4 { font-family: var(--tppu-font-head); margin: 0; line-height: 1.2; }
+.tppu-page p { line-height: 1.65; color: var(--tppu-muted); margin: 0; }
+.tppu-page section { padding: 56px 0; }
+.tppu-page .tppu-section-tight { padding: 36px 0; }
+.tppu-page .tppu-section-alt { background: var(--tppu-panel); }
+
+.tppu-hero {
+  background: linear-gradient(160deg, var(--tppu-navy-deep) 0%, var(--tppu-navy) 60%, #1c4f83 100%);
+  color: #fff;
+  padding: 64px 0 76px;
+  border-radius: 8px;
+}
+.tppu-hero .tppu-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+.tppu-eyebrow { color: var(--tppu-amber-light); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+.tppu-hero h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); font-weight: 600; color: #fff; max-width: 15ch; }
+.tppu-lede { margin-top: 16px; color: var(--tppu-steel); font-size: 1.02rem; max-width: 46ch; }
+.tppu-cta-row { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+
+.tppu-btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--tppu-font-body); font-size: 0.94rem; font-weight: 600; padding: 12px 20px; border-radius: 4px; text-decoration: none; border: 1px solid transparent; }
+.tppu-btn-primary { background: var(--tppu-amber); color: #fff; }
+.tppu-btn-ghost { border-color: rgba(255,255,255,0.35); color: #fff; }
+.tppu-btn-dark { background: var(--tppu-navy); color: #fff; }
+
+.tppu-hero-badge svg { width: 100%; height: auto; max-width: 300px; }
+
+/* ===== Hero dengan foto asli (persis desain web PHP sebelumnya) ===== */
+.tppu-hero-photo {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 96px 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+}
+.tppu-hero-photo-text { max-width: 540px; }
+.tppu-hero-photo-h1 {
+  color: #fff;
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+  font-weight: 700;
+  margin: 0 0 14px;
+  line-height: 1.2;
+}
+.tppu-hero-photo-sub { color: rgba(255,255,255,0.92); font-size: 1rem; margin: 0 0 24px; }
+.tppu-btn-outline {
+  background: transparent;
+  border: 1.5px solid #fff;
+  color: #fff;
+  border-radius: 6px;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .15s ease;
+}
+.tppu-btn-outline:hover { background: var(--tppu-amber); border-color: var(--tppu-amber); color: #fff; transform: translateY(-1px); }
+@media (max-width: 640px) { .tppu-hero-photo { padding: 64px 0; min-height: 300px; } }
+
+.tppu-quote { display: grid; grid-template-columns: 3px 1fr; gap: 22px; max-width: 760px; }
+.tppu-quote .tppu-bar { background: var(--tppu-amber); border-radius: 2px; }
+.tppu-quote p { font-size: 1.05rem; color: #10182b; }
+.tppu-quote .tppu-who { margin-top: 12px; font-size: 0.88rem; color: #6b7488; }
+
+.tppu-stat-row { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--tppu-line); border-bottom: 1px solid var(--tppu-line); }
+.tppu-stat { padding: 22px 20px; border-left: 1px solid var(--tppu-line); }
+.tppu-stat:first-child { border-left: none; }
+.tppu-stat .tppu-num { font-family: var(--tppu-font-head); font-size: 1.9rem; font-weight: 600; color: var(--tppu-navy); }
+.tppu-stat .tppu-label { margin-top: 4px; font-size: 0.86rem; color: #6b7488; }
+@media (max-width: 700px) { .tppu-stat-row { grid-template-columns: repeat(2, 1fr); } .tppu-stat:nth-child(2n+1) { border-left: none; } .tppu-stat:nth-child(n+3) { border-top: 1px solid var(--tppu-line); } }
+
+.tppu-competency { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--tppu-line); }
+.tppu-competency li { display: grid; grid-template-columns: 220px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--tppu-line); }
+.tppu-competency h4 { font-size: 1rem; color: var(--tppu-navy); }
+.tppu-competency p { font-size: 0.94rem; }
+@media (max-width: 680px) { .tppu-competency li { grid-template-columns: 1fr; gap: 6px; } }
+
+.tppu-cta-band { background: var(--tppu-navy-deep); color: #fff; padding: 44px 0; border-radius: 8px; }
+.tppu-cta-band .tppu-wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.tppu-cta-band h3 { color: #fff; font-size: 1.3rem; max-width: 32ch; }
+
+.tppu-page-head { background: var(--tppu-navy-deep); color: #fff; padding: 44px 24px; border-radius: 8px; margin-bottom: 8px; }
+.tppu-page-head h1 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.tppu-page-head p { color: var(--tppu-steel); margin-top: 8px; max-width: 60ch; }
+
+.tppu-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 760px) { .tppu-two-col { grid-template-columns: 1fr; } }
+.tppu-plain-list { padding-left: 20px; margin: 0; color: var(--tppu-muted); display: grid; gap: 8px; }
+
+/* ===== Page hero (Staf Pengajar / Kurikulum & Silabus) — persis desain web referensi ===== */
+.tppu-page-hero {
+  background-size: cover;
+  background-position: center 78%;
+  color: #fff;
+  padding: 52px 0 44px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+.tppu-page-hero-top { margin-bottom: 6px; }
+.tppu-page-hero-top a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.tppu-page-hero-top a:hover { color: var(--tppu-amber); }
+.tppu-page-hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.tppu-page-hero-text { flex: 1 1 380px; }
+.tppu-page-hero-text h1 { color: #fff; font-size: clamp(1.7rem, 3vw, 2.3rem); margin: 0 0 12px; }
+.tppu-page-hero-text p { color: rgba(255,255,255,0.92); max-width: 60ch; margin: 0; }
+.tppu-page-hero-logo { flex: 0 0 auto; }
+.tppu-page-hero-logo img {
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  display: block;
+}
+@media (max-width: 640px) { .tppu-page-hero-logo img { width: 60px; height: 60px; padding: 6px; } }
+
+.tppu-list-heading-row {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 24px;
+}
+.tppu-list-heading { font-family: var(--tppu-font-head); font-size: 1.1rem; font-weight: 700; color: var(--tppu-navy); margin: 0; }
+.tppu-search-input {
+  padding: 9px 14px; width: 240px; max-width: 100%;
+  border: 1px solid var(--tppu-line); border-radius: 4px;
+  font-size: 0.9rem; color: var(--tppu-navy);
+}
+.tppu-search-input:focus { outline: none; border-color: var(--tppu-navy); }
+
+.tppu-struktur-title {
+  font-family: var(--tppu-font-head);
+  font-size: 1.5rem; font-weight: 700; color: var(--tppu-navy);
+  margin: 0 0 24px; padding-bottom: 10px;
+  display: table;
+  border-bottom: 2px solid var(--tppu-amber);
+}
+
+.tppu-empty-state { color: var(--tppu-muted); font-style: italic; padding: 20px 0; }
+
+/* ===== Ukuran teks lebih besar & premium untuk halaman staf/silabus ===== */
+.tppu-staff-page h1, .tppu-syllabus-page h1 { font-size: clamp(1.7rem, 3vw, 2.1rem); font-weight: 700; color: var(--tppu-navy); }
+.tppu-staff-page .tppu-section-title, .tppu-syllabus-page .tppu-section-title { font-size: 1.3rem; font-weight: 700; color: var(--tppu-navy); }
+.tppu-staff-page .tppu-materi-title, .tppu-syllabus-page .tppu-materi-title { font-size: 1.05rem; font-weight: 700; }
+.tppu-staff-page .tppu-prose, .tppu-syllabus-page .tppu-prose { font-size: 1rem; }
+.tppu-syllabus-page .tppu-table { font-size: 0.95rem; }
+.tppu-syllabus-page .tppu-table th { font-size: 0.82rem; padding: 11px 14px; }
+.tppu-syllabus-page .tppu-table td { padding: 11px 14px; }
+.tppu-struktur-title { font-size: clamp(1.5rem, 2.6vw, 1.9rem) !important; }
+
+/* ===== Breadcrumb ===== */
+.tppu-breadcrumb { font-size: 0.95rem; margin: 2px 0 20px; color: var(--tppu-navy); }
+.tppu-breadcrumb a { color: var(--tppu-navy); text-decoration: none; font-weight: 500; }
+.tppu-breadcrumb a:hover { text-decoration: underline; color: var(--tppu-amber); }
+.tppu-breadcrumb-sep { color: var(--tppu-muted); margin: 0 4px; }
+.tppu-breadcrumb-current { color: var(--tppu-muted); font-weight: 500; }
+
+/* ===== Tombol Back: link elegan, underline animasi ===== */
+.tppu-back-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+.tppu-back-link::after {
+  content: '';
+  position: absolute; left: 0; bottom: -1px;
+  width: 100%; height: 2px;
+  background: var(--tppu-amber);
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.tppu-back-link:hover::after { transform: scaleX(1); }
+
+/* ===== Foto profil dosen (ukuran lebih besar di halaman detail) ===== */
+.tppu-profile-photo { flex: 0 0 auto; }
+.tppu-profile-photo img,
+.tppu-profile-photo.tppu-avatar-fallback {
+  width: 190px;
+  height: 230px;
+  aspect-ratio: auto;
+}
+.tppu-profile-info { flex: 1 1 320px; }
+.tppu-profile-info ul { margin: 6px 0 0; padding-left: 18px; color: var(--tppu-ink, #10182b); }
+.tppu-profile-info li { margin-bottom: 4px; }
+
+/* ===== Penelitian & PKM ===== */
+.tppu-karya-list { padding-left: 22px; display: grid; gap: 10px; font-size: 0.98rem; line-height: 1.6; }
+
+/* ===== Info card dengan ikon (halaman detail mata kuliah) ===== */
+.tppu-info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--tppu-line);
+}
+.tppu-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--tppu-panel);
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+.tppu-info-card-icon {
+  flex: 0 0 auto;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--tppu-navy);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.tppu-info-card .tppu-fact-label { display: block; margin-bottom: 2px; }
+.tppu-info-card .tppu-fact-value { display: block; font-size: 0.94rem; }
+
+/* ===== Nama mata kuliah versi Inggris ===== */
+.tppu-matkul-en { display: block; font-size: 0.82rem; color: var(--tppu-muted); font-style: italic; margin-top: 2px; }
+
+/* ===== Sidebar navigasi silabus + scroll-spy ===== */
+.tppu-silabus-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+.tppu-silabus-nav {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 2px solid var(--tppu-line);
+}
+.tppu-silabus-nav-link {
+  padding: 10px 16px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--tppu-muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  margin-left: -2px;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.tppu-silabus-nav-link:hover { color: var(--tppu-navy); background: var(--tppu-panel); }
+.tppu-silabus-nav-link.is-active {
+  color: var(--tppu-navy);
+  font-weight: 700;
+  border-left-color: var(--tppu-amber);
+  background: var(--tppu-panel);
+}
+.tppu-silabus-content { min-width: 0; }
+
+@media (max-width: 860px) {
+  .tppu-silabus-layout { grid-template-columns: 1fr; }
+  .tppu-silabus-nav {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    border-left: none;
+    border-bottom: 1px solid var(--tppu-line);
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tppu-silabus-nav-link {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    margin-left: 0;
+  }
+  .tppu-silabus-nav-link.is-active { border-left-color: transparent; border-bottom-color: var(--tppu-amber); }
+}
+
+@media (max-width: 640px) {
+  .tppu-profile-head { flex-direction: column; align-items: center; text-align: center; }
+  .tppu-profile-info ul { text-align: left; }
+  .tppu-syllabus-page .tppu-table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+
+.tppu-notice { background: #fff7e8; border: 1px solid #f1d698; color: #6b4c0d; font-size: 0.86rem; padding: 12px 16px; border-radius: 6px; margin-bottom: 24px; }
+
+.tppu-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 760px) { .tppu-contact-grid { grid-template-columns: 1fr; } }
+.tppu-info-item { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--tppu-line); }
+.tppu-info-item .tppu-ic { width: 20px; height: 20px; color: var(--tppu-amber); flex-shrink: 0; margin-top: 2px; }
+.tppu-info-item h4 { font-size: 0.92rem; }
+.tppu-info-item p { margin-top: 2px; font-size: 0.9rem; }
+.tppu-map-box { border: 1px solid var(--tppu-line); border-radius: 6px; overflow: hidden; min-height: 240px; }
+.tppu-map-box iframe { width: 100%; height: 100%; min-height: 240px; border: 0; display: block; }
+
+.tppu-wrap { max-width: 1080px; margin: 0 auto; padding: 24px; }
+
+.tppu-back-link {
+  display: inline-block;
+  margin: 10px 0 18px;
+  text-decoration: underline;
+  color: var(--tppu-navy);
+  font-weight: bold;
+}
+.tppu-back-link:hover { color: var(--tppu-amber); }
+
+.tppu-eyebrow {
+  font-size: 0.78rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tppu-amber);
+  margin: 0 0 4px;
+}
+
+/* ---------- Kurikulum: tab + tabel ---------- */
+.tppu-kurikulum-wrap { margin: 20px 0; }
+.tppu-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  border-bottom: 1px solid var(--tppu-line);
+  margin-bottom: 20px;
+}
+.tppu-tab {
+  background: none;
+  border: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--tppu-muted);
+  padding: 8px 2px 10px;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+.tppu-tab:hover { color: var(--tppu-navy); font-weight: 700; }
+.tppu-tab.is-active { color: var(--tppu-navy); font-weight: 700; border-bottom: 2px solid var(--tppu-amber); }
+.tppu-panel { display: none; }
+.tppu-panel.is-shown { display: block; }
+
+.tppu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+}
+.tppu-table thead tr { background: var(--tppu-navy); }
+.tppu-table th {
+  color: #FFFFFF;
+  text-align: left;
+  font-size: 0.78rem;
+  padding: 8px 10px;
+}
+.tppu-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--tppu-line);
+}
+.tppu-table tbody tr:nth-child(odd) { background: #FFFFFF; }
+.tppu-table tbody tr:nth-child(even) { background: var(--tppu-panel); }
+.tppu-table td:first-child { font-weight: bold; color: var(--tppu-navy); white-space: nowrap; }
+.tppu-table a { color: var(--tppu-navy); text-decoration: underline; font-weight: bold; }
+.tppu-table a:hover { color: var(--tppu-amber); }
+
+/* ---------- Halaman detail mata kuliah ---------- */
+.tppu-head-card {
+  background: #FFFFFF;
+  border: 1px solid var(--tppu-line);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(11,37,69,0.10);
+  padding: 22px 26px;
+  margin-bottom: 26px;
+}
+.tppu-head-card h1 { color: var(--tppu-amber); margin: 2px 0 4px; }
+.tppu-subtitle { color: var(--tppu-muted); margin: 0 0 12px; }
+.tppu-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 30px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--tppu-line);
+}
+.tppu-fact-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--tppu-muted);
+}
+.tppu-fact-value { font-weight: 600; }
+
+.tppu-section { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--tppu-line); }
+.tppu-section:last-child { border-bottom: none; }
+.tppu-section-title { color: var(--tppu-navy); margin-bottom: 12px; }
+.tppu-materi-title { color: var(--tppu-navy); margin: 18px 0 8px; }
+.tppu-prose { line-height: 1.7; }
+
+/* ---------- Halaman profil dosen ---------- */
+.tppu-profile-head {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.tppu-profile-photo img {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.tppu-profile-info h1 { color: var(--tppu-navy); margin-bottom: 8px; }
+.tppu-tag {
+  display: inline-block;
+  background: var(--tppu-panel);
+  color: var(--tppu-navy);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* ---------- Grid daftar dosen ---------- */
+.tppu-dosen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  gap: 26px 22px;
+  margin: 20px 0;
+}
+.tppu-dosen-card {
+  text-decoration: none;
+  color: var(--tppu-navy);
+  text-align: center;
+  display: block;
+}
+.tppu-dosen-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform .2s ease;
+}
+.tppu-avatar-fallback {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 4px;
+  background: var(--tppu-navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease;
+}
+.tppu-dosen-card:hover .tppu-avatar-fallback { transform: translateY(-3px); }
+.tppu-dosen-card:hover img { transform: translateY(-3px); }
+.tppu-dosen-card span {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .tppu-facts { gap: 10px 20px; }
+  .tppu-profile-photo img { width: 140px; height: 170px; }
+}
